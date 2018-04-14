@@ -1,1 +1,119 @@
-@import 'reset'
+@import 'reset';
+// declare variable
+//font type
+$font: "Microsoft Yahei",
+"PingFang SC",
+"STHeiti",
+Serif;
+$font-UI: "Microsoft Yahei UI",
+"PingFang SC",
+"STHeiti",
+Serif;
+$font-bold: "Microsoft Yahei-Bold",
+"PingFang SC",
+"STHeiti",
+Serif;
+//font color
+$font-color: #505050;
+$nav-color: #fff;
+$footer-color: #000;
+$header-color: #4a78a8;
+//background color
+$nav-bg: #369;
+$nav-drop-bg: #365479;
+//logo
+$pic1-url: url("../images/pic1.png");
+$footer-bg: url("../images/footer-bg.png");
+// style sheet
+body {
+    font: $font;
+    color: $font-color;
+    font-size: 10px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+}
+
+//header
+header {
+    background-color: #f8f7fa;
+    .container {
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        height: 120px;
+        background: $pic1-url no-repeat right center;
+        a {
+            display: inline-block;
+        }
+    }
+}
+
+//nav
+nav {
+    $items-height: 45px;
+    $items-width: 170px;
+    background-color: $nav-bg;
+    color: $nav-color;
+    font-size: 0;
+    border: {
+        color: #a0a0a0;
+        style: solid none none none;
+        width: 1px;
+    }
+    .nav-items {
+        display: inline-block;
+        position: relative;
+        font-size: 0;
+        width: $items-width;
+        a {
+            display: inline-block;
+            width: 100%;
+            font-size: 1.8rem;
+            line-height: $items-height;
+            text-align: center;
+        }
+    }
+    .drop-down {
+        position: absolute;
+        top: $items-height;
+        left: 0;
+        display: none;
+        box-shadow: #2e4767 0 2px 15px 0px;
+        background-color: $nav-drop-bg;
+        .nav-items {
+            box-shadow: #355276 0 1px 0 0, #345074 0 2px 0 0;
+        }
+    }
+}
+
+//footer
+footer {
+    height: 500px;
+    background: $footer-bg bottom center no-repeat;
+    background-size: 100% 100%;
+    text-align: center;
+    section {
+        max-width: 600px;
+        margin: auto;
+        img {
+            margin: 61px auto 51px;
+        }
+       .copyright, .footer-links a{
+           display: inline-block;
+           font-size: 16px;
+           color: $footer-color;
+       }
+       .footer-links{
+           li {
+            display: inline-block;
+            margin: 0 1em;
+            margin-bottom: 18px;
+           }
+       }
+
+        
+    }
+}
