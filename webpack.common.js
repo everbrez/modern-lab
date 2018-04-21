@@ -16,34 +16,22 @@ module.exports = {
             inject: 'body', //js插入的位置，true/'head'/'body'/false
             hash: true, //为静态资源生成hash值
             // chunks: ['vendors', 'index'],//需要引入的chunk，不配置就会引入所有页面的资源
-            minify: { //压缩HTML文件  
-              removeComments: true, //移除HTML中的注释
-              collapseWhitespace: true //删除空白符与换行符
-            }
           }),
-        new HtmlWebpackPlugin({ //根据模板插入css/js等生成最终HTML
-            favicon: './src/images/favicon.ico', //favicon路径，通过webpack引入同时可以生成hash值
-            filename: 'content.html', //生成的html存放路径，相对于path
-            template: './src/view/content.html', //html模板路径
-            inject: 'body', //js插入的位置，true/'head'/'body'/false
-            hash: true, //为静态资源生成hash值
-            // chunks: ['vendors', 'content'],//需要引入的chunk，不配置就会引入所有页面的资源
-            minify: { //压缩HTML文件  
-              removeComments: true, //移除HTML中的注释
-              collapseWhitespace: true //删除空白符与换行符
-            }
+        new HtmlWebpackPlugin({
+            favicon: './src/images/favicon.ico', 
+            filename: 'content.html', 
+            template: './src/view/content.html', 
+            inject: 'body', 
+            hash: true
+            // chunks: ['vendors', 'content']
           }),
-          new HtmlWebpackPlugin({ //根据模板插入css/js等生成最终HTML
-            favicon: './src/images/favicon.ico', //favicon路径，通过webpack引入同时可以生成hash值
-            filename: 'column.html', //生成的html存放路径，相对于path
-            template: './src/view/column.html', //html模板路径
-            inject: 'body', //js插入的位置，true/'head'/'body'/false
-            hash: true, //为静态资源生成hash值
-            // chunks: ['vendors', 'content'],//需要引入的chunk，不配置就会引入所有页面的资源
-            minify: { //压缩HTML文件  
-              removeComments: true, //移除HTML中的注释
-              collapseWhitespace: true //删除空白符与换行符
-            }
+          new HtmlWebpackPlugin({ 
+            favicon: './src/images/favicon.ico', 
+            filename: 'column.html', 
+            template: './src/view/column.html', 
+            inject: 'body', 
+            hash: true
+            // chunks: ['vendors', 'content']
           }),
         new SpritesmithPlugin({
             src: {
@@ -52,10 +40,10 @@ module.exports = {
             }, //source's path
             target: {
                 image: path.resolve(__dirname, 'src/images/icons.png'),
-                css: path.resolve(__dirname, 'src/sprites.scss')
+                css: path.resolve(__dirname, 'src/style/sprites.scss')
             },// generated files's path
             apiOptions: {
-                cssImageRef: "images/icons.png" //relative to the sprites.scss file
+                cssImageRef: "../images/icons.png" //relative to the sprites.scss file
             }
         }) //sprites
     ],
@@ -69,8 +57,16 @@ module.exports = {
                 use: ['style-loader', 'css-loader']
             },
             {
-                test: /\.(png|jpg|gif|bmp)/,
-                use: ['file-loader']
+                test: /\.(png|jpg|gif|bmp)$/,
+                use: [{loader: 'file-loader',
+                options: {
+                    outputPath: 'images/'
+                }
+            }]
+            },
+            {
+                test: /\.(html|htm)$/,
+                use: ['html-loader']
             }
         ]
     },

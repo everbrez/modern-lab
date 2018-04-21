@@ -1,6 +1,5 @@
-import printMe from './printf.js';
-import './style.scss';
-const $ = require('jquery');
+import './style/style.scss';
+import $ from 'jquery';
 
 //begin
 window.addEventListener('load',init,false);

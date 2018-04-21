@@ -7,7 +7,7 @@ const prod = {
     devtool: 'source-map',
     plugins:[
         new UglifyJSPlugin({
-            sourceMap: true
+            //sourceMap: true
         }),
         new ExtractTextPlugin('[name].css')
     ],
@@ -22,7 +22,7 @@ const prod = {
                     {
                         loader: 'sass-loader',
                         options: {
-                            sourceMap: true
+                           // sourceMap: true
                         }
                     }
                 ]
