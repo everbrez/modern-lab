@@ -35,7 +35,7 @@ module.exports = {
           }),
         new SpritesmithPlugin({
             src: {
-                cwd: path.resolve(__dirname, 'src/icon'),
+                cwd: path.resolve(__dirname, 'src/images/icon'),
                 glob: '*.png'
             }, //source's path
             target: {
