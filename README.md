@@ -1,4 +1,5 @@
 # modern-lab
+------------------
 ## 项目工具
 - sass
 - git
@@ -7,8 +8,9 @@
 ## 项目安装
 ### 请确保电脑已经安装nodeJS以及git，安装地址：
 [node](http://nodejs.cn/download/)
-----------
+<br>
 [git](https://git-scm.com/downloads)
+<br>
 安装完成之后打开gitBash(Windows)或者terminal.app(mac)
 将命令行的位置移动至目标文件夹：
 ```
