@@ -114,10 +114,11 @@ npm run build
 //文件： tag.png
 @import 'sprites';
 .tag {
-    @include sprite();
+    @include sprite($tag);
 }
 ```
 > 已经自动为.tag设置width、height以及background
+> 当然，也可以查看style里面的sprites.scss文件，查找相应的变量
 
 ## 上传代码至GitHub
 #### 首先需要添加ssh密钥(已经添加过请跳过这一步)
