@@ -7,6 +7,7 @@
 ## 项目安装
 ### 请确保电脑已经安装nodeJS以及git，安装地址：
 [node](http://nodejs.cn/download/)
+----------
 [git](https://git-scm.com/downloads)
 安装完成之后打开gitBash(Windows)或者terminal.app(mac)
 将命令行的位置移动至目标文件夹：
@@ -46,6 +47,7 @@ npm install
 
 ## 项目结构
 项目结构主要是
+```
 modern-lab
 ├── README.md
 ├── dist
@@ -72,11 +74,12 @@ modern-lab
 ├── webpack.common.js
 ├── webpack.dev.js
 └── webpack.prod.js
+```
 
 #### dist: 文件输出
 #### node_modules: 模块所在文件夹
 #### src: 源码地址,开发的html、js、css、images文件都在此文件夹
-    **其中图片images文件夹区分为icon文件夹，如需使用icon文件里的图片，请看下方的icon目录**
+> 其中图片images文件夹区分为icon文件夹，如需使用icon文件里的图片，请看下方的icon目录
 #### 其他: 配置以及一些包的信息
 
 ## webpack的使用
@@ -112,14 +115,14 @@ npm run build
     @include sprite();
 }
 ```
-**已经自动为.tag设置width、height以及background**
+> 已经自动为.tag设置width、height以及background
 
 ## 上传代码至GitHub
 #### 首先需要添加ssh密钥(已经添加过请跳过这一步)
 ```
 ssh-keygen -t rsa -C "youremail@example.com"
 ```
-然后将密钥添加至GitHub设置中，详情请看：[https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/001374385852170d9c7adf13c30429b9660d0eb689dd43a000]
+然后将密钥添加至GitHub设置中，详情请看：[git教程](https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/001374385852170d9c7adf13c30429b9660d0eb689dd43a000)
 
 #### 使用push上传代码
 ```
