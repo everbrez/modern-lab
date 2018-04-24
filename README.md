@@ -21,7 +21,7 @@ cd 目标文件位置(XXXX/XXX/modern-lab)
 ```
 git init
 ```
-如果还没有配置用户名和邮箱的可以使用一下命令配置：
+如果还没有配置用户名和邮箱的可以使用以下命令配置：
 ```
 git config user.name 'your name'
 git config user.email 'yourEmail@example.com'
@@ -35,7 +35,7 @@ git remote add origin git@github.com:dengyf5/modern-lab.git
 git pull
 ```
 ### 初始化npm
-将github上的代码同步到本地之后，使用一下命令初始化npm
+将github上的代码同步到本地之后，使用以下命令初始化npm
 ```
 cnpm install
 ```
@@ -44,6 +44,10 @@ cnpm install
 npm install
 ```
 > 中国大陆推荐使用第一种方法
+如果还没有安装cnpm，可以使用以下命令安装：
+```
+npm install -g cnpm --registry=https://registry.npm.taobao.org
+```
 
 至此，项目同步完毕。
 
