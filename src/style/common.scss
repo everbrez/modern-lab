@@ -80,7 +80,7 @@ nav {
         a {
             display: inline-block;
             width: 100%;
-            font-size: 1.8rem;
+            font-size: 19px;
             line-height: $items-height;
             text-align: center;
         }
@@ -90,10 +90,10 @@ nav {
         top: $items-height;
         left: 0;
         display: none;
-        box-shadow: #2e4767 0 2px 15px 0px;
+        box-shadow: #2e4767 0 0 7px 0;
         background-color: $nav-bg;
         .nav-items {
-            box-shadow: #355276 0 1px 0 0, #345074 0 2px 0 0;
+            box-shadow: #355276 1px 1px 0 0 ;
         }
     }
 }
