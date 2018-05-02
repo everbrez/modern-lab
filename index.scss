@@ -1,0 +1,262 @@
+sass --watch sass-lzf:css
+@import 'reset';
+$pics2:url("../images/slide.png");
+
+
+.slide{
+  height:600px;
+  background: $pics2 no-repeat center;
+  background-size:cover;
+}
+
+.new{
+  width:1200px;
+  height:500px;
+  margin:auto;
+  & .ti{
+    float:left;
+    width:1200px;
+    height:60px;
+    border-bottom: 1px solid #7d7d7d;
+    & ul{
+      & li{
+        height:60px;
+        line-height:60px;
+        color:#4a78a8;
+        font-size:25px;
+        float:left;
+        width: 180px;
+        & img{
+          vertical-align: middle;
+        }
+        & .below{
+          width:140px;
+          margin-top:-8px;
+          max-width: 100%;
+          display:block;
+          opacity: 0;
+          font-size: 12px;
+          transition: 0.3s;
+          -webkit-transition: .5s;
+          -moz-transition: .5s;
+        }
+        & div:hover .below{
+          opacity: 1;
+        }
+      }
+
+    }
+    & form{
+      display: block;
+      width:175px;
+      margin-top:15px;
+      height:30px;
+      float:right;
+      & input{
+        &::-webkit-input-placeholder{
+          color:#4a78a8;
+          text-indent:5px;
+        }
+        &:-moz-placeholder{
+          color:#4a78a8;
+          text-indent:5px;
+        }
+        &::-moz-placeholder{
+          color:#4a78a8;
+          text-indent:5px;
+        }
+        &:-ms-input-placeholder{
+          color:#4a78a8;
+          text-indent:5px;
+        }
+
+        width:130px;
+        height:26px;
+        float:left;
+        display: block;
+        text-indent:5px;
+        border:1px solid #4a78a8;
+        border-radius:10px 0 0 10px;
+        top: 0;
+        right: 0;
+
+
+	  }
+      & button{
+        border: none;
+        outline: none;
+        display: block;
+        float:left;
+        background:url("../images/icon/icon_search.png");
+        cursor:pointer;
+        width: 40px;
+        height:30px;
+        border-color:#4a78a8;
+        border-radius: 0 10px 10px 0;
+        top: 0;
+        right: 0;
+        &:before {
+
+        }
+      }
+    }
+
+  }
+
+  & .left{
+    width:405px;
+    float:left;
+    margin-top:45px;
+    & div{
+      font-family:FZSKBXKJW--GB1-0;
+      font-size:30px;
+      margin-top:30px;
+      text-align: center;
+    }
+  }
+
+  & .news{
+    float: right;
+    & ul{
+      & li{
+        list-style:disc;
+
+        height:50px;
+        width:750px;
+        line-height:50px;
+        border-bottom: 1px dashed #7d7d7d;
+        & .date{
+          width:90px;
+          float:right;
+        }
+      }
+    }
+  }
+
+
+}
+
+
+
+.sources{
+  background-color:#e5e5e5;
+  height:500px;
+  & .container{
+    width:1200px;
+    margin: auto;
+    & .ti{
+      height:130px;
+      padding-top:33px;
+      color:#4a78a8;
+      font-size:20px;
+      & a{
+        & img{
+          vertical-align: middle;
+        }
+
+        display: block;
+        font-size:25px;
+        margin-bottom:5px;
+      }
+    }
+    & ul{
+      margin-top:-35px;
+
+      & li{
+        float:left;
+        height:324px;
+        width:383px;
+        background-color:white;
+        text-align: center;
+        margin-left:25px;
+        transform: scale(1.0);
+        & a img{
+          display: block;
+          height:257px;
+
+        }
+        & a img:hover{
+          transform: scale(1.01);
+        }
+        & div{
+          line-height:67px;
+        }
+
+      }
+      & >li:first-child{
+        margin-left:0px;
+      }
+    }
+  }
+
+}
+
+
+
+.list{
+  width:1200px;
+  height:500px;
+  margin:auto;
+
+  & ul{
+    & li{
+      width:400px;
+      float: left;
+      & a{
+        display:block;
+        width:100px;
+        height:100px;
+        margin:40px 150px 15px 150px;
+      }
+      & a :hover{
+        animation-name:shake;
+        animation-duration:0.5s;
+        animation-timing-function:linear;
+        animation-delay:0s;
+        animation-iteration-count:1;
+        animation-direction:alternate;
+        animation-play-state:running;
+        /* Safari and Chrome: */
+        -webkit-animation-name:shake;
+        -webkit-animation-duration:0.5s;
+        -webkit-animation-timing-function:linear;
+        -webkit-animation-delay:0s;
+        -webkit-animation-iteration-count:1;
+        -webkit-animation-direction:alternate;
+        -webkit-animation-play-state:running;
+      }
+
+      @keyframes shake /*定义动画名*/
+      {
+        0%   {transform: scale(1.0);} /*定义起始帧样式，0%相当于from*/
+        25%  {transform: scale(1.1);}
+        50%  {transform: scale(1.0);}
+        75%  {transform: scale(0.9);}
+        100% {transform: scale(1.0);} /*定义结束帧样式，100%相当于to*/
+      }
+
+      @-webkit-keyframes shake /* Safari and Chrome */
+      {
+        0%   {transform: scale(1.0);} /*定义起始帧样式，0%相当于from*/
+        25%  {transform: scale(1.1);}
+        50%  {transform: scale(1.0);}
+        75%  {transform: scale(0.9);}
+        100% {transform: scale(1.0);} /*定义结束帧样式，100%相当于to*/
+      }
+      & .ti{
+        font-size:20px;
+        text-align:center;
+        font-family: "Microsoft YaHei UI";
+        font-weight:bold;
+      }
+      & .intro{
+        font-size:15px;
+        color: #939498;
+        text-align:center;
+
+      }
+
+    }
+  }
+}/* Scss Document */
+
