@@ -33,6 +33,14 @@ module.exports = {
             hash: true
             // chunks: ['vendors', 'content']
           }),
+          new HtmlWebpackPlugin({ 
+            favicon: './src/images/favicon.ico', 
+            filename: 'column2.html', 
+            template: './src/view/column2.html', 
+            inject: 'body', 
+            hash: true
+            // chunks: ['vendors', 'content']
+          }),
         new SpritesmithPlugin({
             src: {
                 cwd: path.resolve(__dirname, 'src/images/icon'),
