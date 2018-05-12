@@ -1,4 +1,5 @@
 @import 'reset';
+@import 'sprites';
 // declare variable
 //font type
 $font: "Microsoft Yahei",
@@ -29,6 +30,10 @@ body {
     font: $font;
     color: $font-color;
     font-size: 10px;
+    background-color: #f8f7fa;
+    @media screen and (max-width: 980px) {
+        padding-top: 30px;
+    }
 }
 
 .container {
@@ -101,7 +106,6 @@ nav {
         display: inline-block;
         position: relative;
         font-size: 0;
-        width: $items-width;
         &:hover> {
             a,
             .drop-down a:hover {
@@ -115,6 +119,9 @@ nav {
             line-height: $items-height;
             text-align: center;
         }
+    }
+    #nav-item > .nav-items {
+        width: (1/7)*100%;
     }
     .drop-down {
         position: absolute;
@@ -136,23 +143,42 @@ nav {
         button {
             float: right;
             display: inline-block;
-
+            @include sprite($nav-list);
             height:100%;
         }
     }
     @media screen and (max-width: 980px) {
+
+        position:absolute;
+        top:0;
+        width:100%;
+        background-color: #f8f7fa;
+        border: {
+            color: #a0a0a0;
+            style: none none solid none;
+            width: 1px;
+        }
         .container {
-            margin:0;
+            margin:0 ;
         }
         #nav-item {
             display: none;
+            color: $font-color;
+            .nav-items {
+                display:block;
+                width:100%;
+                margin-right:1em;
+
+            }
+        }
+        .drop-down {
+            display:none;
         }
         .nav-bar {
             display: inline-block;
         }
     }
 }
-
 //footer
 footer {
     height: 500px;
