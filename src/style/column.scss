@@ -120,8 +120,7 @@ a{
 	
 }
 .card-left {
-	border-right: solid #e5e5e5 2px;
-	width: 840px;
+	width: 100%;
 	
 }
 .card-left div{
@@ -129,6 +128,7 @@ a{
 	height: 220px;
 	padding: 5px 18px 0;
 	overflow: hidden;
+	max-width: 98%;
 	
 	
 }
@@ -179,4 +179,15 @@ a{
 	bottom: 10px;
 	text-align:center;
 	vertical-align: middle;
+}
+@media screen and (max-width: 500px) {
+	.card-left img {
+		display: none;
+	}
+	.card-left li {
+		margin-left: 0;
+	}
+	.card-left div{
+		height: auto;
+	}
 }
