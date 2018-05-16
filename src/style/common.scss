@@ -124,6 +124,7 @@ nav {
         width: (1/7)*100%;
     }
     .drop-down {
+        width:100%;
         position: absolute;
         top: $items-height;
         left: 0;
@@ -132,6 +133,7 @@ nav {
         background-color: $nav-bg;
         .nav-items {
             box-shadow: #355276 1px 1px 0 0;
+            display: block;
         }
     }
     .nav-bar {
