@@ -1,7 +1,17 @@
 @import 'reset';
+@import 'sprites.scss';
 $pics2:url("../images/slide.png");
+//icons
+.icon-new {
+  @include sprite($new);
+}
 
-
+@each $icon in $icon_1,$icon_2,$icon_3,$icon_4,$icon_5,$icon_6{
+  
+  #{nth($icon,10)} {
+    @include sprite($icon);
+  }
+}
 .slide{
   height:600px;
   background: $pics2 no-repeat center;
