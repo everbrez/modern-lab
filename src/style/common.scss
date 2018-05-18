@@ -1,4 +1,5 @@
 @import 'reset';
+@import 'sprites';
 // declare variable
 //font type
 $font: "Microsoft Yahei",
@@ -29,6 +30,10 @@ body {
     font: $font;
     color: $font-color;
     font-size: 10px;
+    background-color: #f8f7fa;
+    @media screen and (max-width: 980px) {
+        padding-top: 30px;
+    }
 }
 
 .container {
@@ -36,9 +41,17 @@ body {
     margin: auto;
 }
 
+@media screen and (max-width: 1250px) {
+    .container {
+        max-width: unset;
+        margin: 0 3%;
+    }
+}
+
 a:hover {
     color: #4A78A8;
 }
+
 //header
 header {
     background-color: #f8f7fa;
@@ -50,6 +63,26 @@ header {
         background: $pic1-url no-repeat right center;
         a {
             display: inline-block;
+            margin: (120px - 65px)/2 0;
+            display: inline-flex;
+            flex-flow: row nowrap;
+            justify-content: space-around;
+        }
+    }
+    @media screen and (max-width: 980px) {
+        .container {
+            background: none;
+            justify-content: center;
+            text-align: center;
+        }
+    }
+    @media screen and (max-width: 500px) {
+        a {
+            width: 100%;
+            margin: 0;
+            img {
+                width: 100%;
+            }
         }
     }
 }
@@ -57,9 +90,12 @@ header {
 //nav
 nav {
     $items-height: 45px;
-    $items-width: 170px;
+    $items-width: (1/7)*100%;
     background-color: $nav-bg;
-    &, a:hover{color: $nav-color;}
+    &,
+    a:hover {
+        color: $nav-color;
+    }
     font-size: 0;
     border: {
         color: #a0a0a0;
@@ -70,12 +106,11 @@ nav {
         display: inline-block;
         position: relative;
         font-size: 0;
-        width: $items-width;
-        &:hover > {
-            a, .drop-down a:hover{
+        &:hover> {
+            a,
+            .drop-down a:hover {
                 background-color: $nav-hover-bg;
             }
-
         }
         a {
             display: inline-block;
@@ -85,7 +120,11 @@ nav {
             text-align: center;
         }
     }
+    #nav-item > .nav-items {
+        width: (1/7)*100%;
+    }
     .drop-down {
+        width:100%;
         position: absolute;
         top: $items-height;
         left: 0;
@@ -93,11 +132,55 @@ nav {
         box-shadow: #2e4767 0 0 7px 0;
         background-color: $nav-bg;
         .nav-items {
-            box-shadow: #355276 1px 1px 0 0 ;
+            box-shadow: #355276 1px 1px 0 0;
+            display: block;
+        }
+    }
+    .nav-bar {
+        display: none;
+
+        width:100%;
+        height: 30px;
+
+        button {
+            float: right;
+            display: inline-block;
+            @include sprite($nav-list);
+            height:100%;
+        }
+    }
+    @media screen and (max-width: 980px) {
+
+        position:absolute;
+        top:0;
+        width:100%;
+        background-color: #f8f7fa;
+        border: {
+            color: #a0a0a0;
+            style: none none solid none;
+            width: 1px;
+        }
+        .container {
+            margin:0 ;
+        }
+        #nav-item {
+            display: none;
+            color: $font-color;
+            .nav-items {
+                display:block;
+                width:100%;
+                margin-right:1em;
+
+            }
+        }
+        .drop-down {
+            display:none;
+        }
+        .nav-bar {
+            display: inline-block;
         }
     }
 }
-
 //footer
 footer {
     height: 500px;
@@ -111,17 +194,43 @@ footer {
         img {
             margin: 61px auto 51px;
         }
-       .copyright, .footer-links a{
-           display: inline-block;
-           font-size: 16px;
-          
-       }
-       .footer-links{
-           li {
+        .copyright,
+        .footer-links a {
             display: inline-block;
-            margin: 0 1em;
-            margin-bottom: 18px;
-           }
-       } 
+            font-size: 16px;
+        }
+        .footer-links {
+            li {
+                display: inline-block;
+                margin: 0 1em;
+                margin-bottom: 18px;
+            }
+        }
     }
+    @media screen and (max-width: 1200px) {
+        height: auto;
+        width: 100%;
+        section {
+            padding: 20px 0;
+            img {
+                margin: 20px auto;
+            }
+        }
+    }
+    @media screen and (max-width: 980px) {
+        height: 250px;
+        width: auto;
+        section {
+            .footer-links {
+                display: none;
+            }
+        }
+    }
+    @media screen and (max-width: 774px) {
+        background-size: cover;
+    }
+}
+.icon {
+    vertical-align: middle;
+    display: inline-block;
 }

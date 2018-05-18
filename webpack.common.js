@@ -14,7 +14,7 @@ module.exports = {
             filename: 'index.html', //生成的html存放路径，相对于path
             template: './src/view/index.html', //html模板路径
             inject: 'body', //js插入的位置，true/'head'/'body'/false
-            hash: true, //为静态资源生成hash值
+            //hash: true, //为静态资源生成hash值
             // chunks: ['vendors', 'index'],//需要引入的chunk，不配置就会引入所有页面的资源
           }),
         new HtmlWebpackPlugin({
@@ -22,7 +22,7 @@ module.exports = {
             filename: 'content.html', 
             template: './src/view/content.html', 
             inject: 'body', 
-            hash: true
+            //hash: true
             // chunks: ['vendors', 'content']
           }),
           new HtmlWebpackPlugin({ 
@@ -30,7 +30,7 @@ module.exports = {
             filename: 'column.html', 
             template: './src/view/column.html', 
             inject: 'body', 
-            hash: true
+           // hash: true
             // chunks: ['vendors', 'content']
           }),
           new HtmlWebpackPlugin({ 
@@ -38,7 +38,7 @@ module.exports = {
             filename: 'column2.html', 
             template: './src/view/column2.html', 
             inject: 'body', 
-            hash: true
+            //hash: true
             // chunks: ['vendors', 'content']
           }),
         new SpritesmithPlugin({
