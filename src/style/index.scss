@@ -8,7 +8,7 @@ $pics2:url("../images/slide.png");
 
 @each $icon in $icon_1,$icon_2,$icon_3,$icon_4,$icon_5,$icon_6{
   
-  #{nth($icon,10)} {
+  .#{nth($icon,10)} {
     @include sprite($icon);
   }
 }

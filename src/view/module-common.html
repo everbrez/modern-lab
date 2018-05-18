@@ -1,0 +1,96 @@
+<!--head-->
+
+<head>
+    <meta charset="UTF-8">
+    <title>${HopeTag.PageTitle}</title>
+    <base target="_blank">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> ${HopeTag.MetaKeywords} ${HopeTag.GetSkin_CSS("modernlab_2018")}
+</head>
+
+<!--body-->
+<!-- header/banner -->
+<header>
+    <div class="container">
+        <!-- logo -->
+        <a class="logo" href="index.html">
+            <img src="../images/logo.png">
+        </a>
+    </div>
+</header>
+
+<!-- navigation -->
+<nav>
+    <div class="container">
+        <div class="nav-bar">
+            <button id="nav-bar-btn">
+            </button>
+        </div>
+        <ul id="nav-item">
+            <!-- nav item -->
+            <li class="nav-items">
+                <a href="${HopeTag.GetCategoryLink(149)}">课程概况</a>
+            </li>
+            <!-- nav item -->
+            <li class="nav-items">
+                <a href="${HopeTag.GetCategoryLink(158)}">教学团队</a>
+
+            </li>
+            <!-- nav item -->
+            <li class="nav-items">
+                <a href="${HopeTag.GetCategoryLink(441)}">教学资源</a>
+
+                <!-- drop down menu-->
+                <ul class="drop-down">
+                    #foreach ${category} in ${HopeTag.CategorySource(62)}
+                    $category
+                    <li class="nav-items">
+                        <a href="">教学设备</a>
+                    </li>
+                    #end
+                    <li class="nav-items">
+                        <a href="">教学录像</a>
+                    </li>
+                    <li class="nav-items">
+                        <a href="">电子录像</a>
+                    </li>
+                </ul>
+
+            </li>
+            <!-- nav item -->
+            <li class="nav-items">
+                <a href="${HopeTag.GetCategoryLink(442)}">学习资料</a>
+
+                <!-- drop down menu-->
+                <ul class="drop-down">
+                    <li class="nav-items">
+                        <a href="">实验习题</a>
+                    </li>
+                    <li class="nav-items">
+                        <a href="">实验考试</a>
+                    </li>
+                    <li class="nav-items">
+                        <a href="">开放实验</a>
+                    </li>
+                    <li class="nav-items">
+                        <a href="">虚拟实验</a>
+                    </li>
+                </ul>
+
+            </li>
+            <!-- nav item -->
+            <li class="nav-items">
+                <a href="${HopeTag.GetCategoryLink(165)}">教研成果</a>
+
+            </li>
+            <!-- nav item -->
+            <li class="nav-items">
+                <a href="${HopeTag.GetCategoryLink(166)}">教学改革</a>
+
+            </li>
+            <!-- nav item -->
+            <li class="nav-items">
+                <a href="${HopeTag.GetCategoryLink(443)}">下载中心</a>
+            </li>
+        </ul>
+    </div>
+</nav>
