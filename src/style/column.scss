@@ -306,3 +306,26 @@ a{
 	text-align:center;
 	vertical-align: middle;
 }
+.cardleft {
+    border-right: solid #e5e5e5 2px;
+    width: 71.25%;
+}
+
+.list_time {
+    float: right;
+    margin-left: 18px;
+}
+
+
+.main_box{
+	width: 71.25%;
+	border-right: solid #e5e5e5 2px;
+	padding: 0px 30px 20px 20px;
+}
+.main_box li{
+    color: #505050;
+    font: 16px Microsoft YaHei;
+	list-style: none;
+	padding: 18px 0px;
+	border-bottom: dashed #505050 1px;
+}
