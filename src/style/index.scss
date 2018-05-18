@@ -99,18 +99,20 @@ $grid {
       width: 100%;
     }
     .lists-item {
-      list-style: initial;
-      margin-left: 1em;
+      & a::before {
+        content: '●';
+      }
       a {
         line-height: 200%;
         display: block;
       }
+      border: {
+        color: #505050;
+        width: 1px;
+        style: none none dashed none;
+      }
     }
-    border: {
-      color: #505050;
-      width: 1px;
-      style: none none dashed none;
-    }
+    
     time {
       float: right;
     }

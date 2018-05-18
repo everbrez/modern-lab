@@ -7,6 +7,27 @@ window.addEventListener('load',init,false);
 function init() {
     dropDown();
     navBarDown();
+    toggleList();
+
+
+
+    //switch
+    function toggleList() {
+        const newsHeader = document.getElementById('news-header');
+        const classList = ['news-lists','plan-lists','expriment-lists'];
+
+        // add event listener
+        newsHeader.addEventListener('mouseover',(e)=>{
+            if(e.target.nodeName === 'H1'){
+                const id = e.target.id;
+                console.log(id);
+                newsHeader.classList.remove(...classList);
+                newsHeader.classList.add(id);
+            }
+        },false);
+
+    }
+
     function dropDown() {
         let hoverDelay = 200;
 
