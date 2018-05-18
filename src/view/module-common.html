@@ -8,7 +8,7 @@
 </head>
 
 <!--body-->
-<!-- header/banner -->
+<!-- S header/banner -->
 <header>
     <div class="container">
         <!-- logo -->
@@ -17,8 +17,9 @@
         </a>
     </div>
 </header>
+<!-- E header/banner -->
 
-<!-- navigation -->
+<!-- S navigation -->
 <nav>
     <div class="container">
         <div class="nav-bar">
@@ -27,70 +28,271 @@
         </div>
         <ul id="nav-item">
             <!-- nav item -->
+            ########课程概况 #set($Cat = ${HopeTag.GetCategory(149)})
             <li class="nav-items">
-                <a href="${HopeTag.GetCategoryLink(149)}">课程概况</a>
-            </li>
-            <!-- nav item -->
-            <li class="nav-items">
-                <a href="${HopeTag.GetCategoryLink(158)}">教学团队</a>
-
-            </li>
-            <!-- nav item -->
-            <li class="nav-items">
-                <a href="${HopeTag.GetCategoryLink(441)}">教学资源</a>
-
+                <a href="${HopeTag.GetCategoryLink($Cat.NodeID)}">$Cat.name</a>
                 <!-- drop down menu-->
                 <ul class="drop-down">
-                    #foreach ${category} in ${HopeTag.CategorySource(62)}
-                    $category
+                    #foreach($cat in ${HopeTag.CategorySource($Cat.NodeID)})
                     <li class="nav-items">
-                        <a href="">教学设备</a>
+                        <a href="${HopeTag.GetCategoryLink($cat.NodeID)}">$cat.name</a>
                     </li>
                     #end
-                    <li class="nav-items">
-                        <a href="">教学录像</a>
-                    </li>
-                    <li class="nav-items">
-                        <a href="">电子录像</a>
-                    </li>
                 </ul>
-
             </li>
             <!-- nav item -->
+            <!-- nav item -->
+            ########教学团队 #set($Cat = ${HopeTag.GetCategory(158)})
             <li class="nav-items">
-                <a href="${HopeTag.GetCategoryLink(442)}">学习资料</a>
-
+                <a href="${HopeTag.GetCategoryLink($Cat.NodeID)}">$Cat.name</a>
                 <!-- drop down menu-->
                 <ul class="drop-down">
+                    #foreach($cat in ${HopeTag.CategorySource($Cat.NodeID)})
                     <li class="nav-items">
-                        <a href="">实验习题</a>
+                        <a href="${HopeTag.GetCategoryLink($cat.NodeID)}">$cat.name</a>
                     </li>
-                    <li class="nav-items">
-                        <a href="">实验考试</a>
-                    </li>
-                    <li class="nav-items">
-                        <a href="">开放实验</a>
-                    </li>
-                    <li class="nav-items">
-                        <a href="">虚拟实验</a>
-                    </li>
+                    #end
                 </ul>
-
             </li>
             <!-- nav item -->
+            <!-- nav item -->
+            ########教学资源 #set($Cat = ${HopeTag.GetCategory(1445)})
             <li class="nav-items">
-                <a href="${HopeTag.GetCategoryLink(165)}">教研成果</a>
-
+                <a href="${HopeTag.GetCategoryLink($Cat.NodeID)}">$Cat.name</a>
+                <!-- drop down menu-->
+                <ul class="drop-down">
+                    #foreach($cat in ${HopeTag.CategorySource($Cat.NodeID)})
+                    <li class="nav-items">
+                        <a href="${HopeTag.GetCategoryLink($cat.NodeID)}">$cat.name</a>
+                    </li>
+                    #end
+                </ul>
             </li>
             <!-- nav item -->
+            <!-- nav item -->
+            ########学习资料 #set($Cat = ${HopeTag.GetCategory(1449)})
             <li class="nav-items">
-                <a href="${HopeTag.GetCategoryLink(166)}">教学改革</a>
-
+                <a href="${HopeTag.GetCategoryLink($Cat.NodeID)}">$Cat.name</a>
+                <!-- drop down menu-->
+                <ul class="drop-down">
+                    #foreach($cat in ${HopeTag.CategorySource($Cat.NodeID)})
+                    <li class="nav-items">
+                        <a href="${HopeTag.GetCategoryLink($cat.NodeID)}">$cat.name</a>
+                    </li>
+                    #end
+                </ul>
             </li>
             <!-- nav item -->
+            <!-- nav item -->
+            ########教研成果 #set($Cat = ${HopeTag.GetCategory(1450)})
             <li class="nav-items">
-                <a href="${HopeTag.GetCategoryLink(443)}">下载中心</a>
+                <a href="${HopeTag.GetCategoryLink($Cat.NodeID)}">$Cat.name</a>
+                <!-- drop down menu-->
+                <ul class="drop-down">
+                    #foreach($cat in ${HopeTag.CategorySource($Cat.NodeID)})
+                    <li class="nav-items">
+                        <a href="${HopeTag.GetCategoryLink($cat.NodeID)}">$cat.name</a>
+                    </li>
+                    #end
+                </ul>
             </li>
+            <!-- nav item -->
+            <!-- nav item -->
+            ########教学改革 #set($Cat = ${HopeTag.GetCategory(166)})
+            <li class="nav-items">
+                <a href="${HopeTag.GetCategoryLink($Cat.NodeID)}">$Cat.name</a>
+                <!-- drop down menu-->
+                <ul class="drop-down">
+                    #foreach($cat in ${HopeTag.CategorySource($Cat.NodeID)})
+                    <li class="nav-items">
+                        <a href="${HopeTag.GetCategoryLink($cat.NodeID)}">$cat.name</a>
+                    </li>
+                    #end
+                </ul>
+            </li>
+            <!-- nav item -->
+            <!-- nav item -->
+            #########下载中心 #set($Cat = ${HopeTag.GetCategory(443)})
+            <li class="nav-items">
+                <a href="${HopeTag.GetCategoryLink($Cat.NodeID)}">$Cat.name</a>
+                <!-- drop down menu-->
+                <ul class="drop-down">
+                    #foreach($cat in ${HopeTag.CategorySource($Cat.NodeID)})
+                    <li class="nav-items">
+                        <a href="${HopeTag.GetCategoryLink($cat.NodeID)}">$cat.name</a>
+                    </li>
+                    #end
+                </ul>
+            </li>
+            <!-- nav item -->
         </ul>
     </div>
 </nav>
+<!-- E navigation -->
+
+<!-- S footer -->
+<footer>
+    <section class="footer-content">
+        <!-- footer logo -->
+        <img src="../images/footer-logo.png">
+        <br>
+        <!-- footer links -->
+        <ul class="footer-links">
+            <li>
+                <a href="http://sysu.edu.cn/2012/cn/index.htm">中山大学</a>
+            </li>
+            <li>
+                <a href="http://ce.sysu.edu.cn/">化学学院</a>
+            </li>
+            <li>
+                <a href="">博雅教育</a>
+            </li>
+            <li>
+                <a href="">网站地图</a>
+            </li>
+            <li>
+                <a href="">联系我们</a>
+            </li>
+            <li>
+                <a href="http://ce.sysu.edu.cn/html/ChemExperiment/index.html">化学实验教学中心</a>
+            </li>
+            <li>
+                <a href="http://ce.sysu.edu.cn/Competition/">化学实验竞赛</a>
+            </li>
+            <li>
+                <a href="http://ce.sysu.edu.cn/ehs/Index.aspx">EHS管理体系</a>
+            </li>
+
+        </ul>
+
+        <div class="copyright">
+            ©
+            <a href="${HopeTag.UserLoginUrl}">◇</a>
+            <a href="http://ce.sysu.edu.cn/hope/">厚朴〖HOPE〗工作室</a>
+            <a href="${HopeTag.AdminLoginUrl}">◇</a>
+        </div>
+    </section>
+</footer>
+<!-- E footer -->
+
+<!-- S location -->
+<div class="location">
+    <div class="locationInfo">
+        <i class="location-icon"></i>
+        ${HopeTag.Breadcrumbs}
+    </div>
+</div>
+<!-- E location -->
+
+<!-- S sidebar -->
+<div class="article_right sidebar">
+    <div class="article_right_poem">
+        #if(${HopeTag.ParentCategoryID} == 0)
+        <li>
+            <a href="${HopeTag.GetCategoryLink(${HopeTag.CurrentCategoryID})}" class="sidebar-header">
+                <i class="sidebar-icon icon"></i>${HopeTag.GetCategoryName(${HopeTag.CurrentCategoryID})}</a>
+        </li>
+        #else
+        <li>
+            <a href="${HopeTag.GetCategoryLink(${HopeTag.ParentCategoryID})}" class="sidebar-header">
+                <i class="sidebar-icon icon"></i>${HopeTag.GetCategoryName(${HopeTag.ParentCategoryID})}</a>
+        </li>
+        #end #foreach($cat in ${HopeTag.CategorySource(${HopeTag.ParentCategoryID})}) #if($cat.NodeID == 171 || $cat.NodeID == 176)
+        #foreach($art in ${HopeTag.ArticlePageSource($cat.NodeID,false,1)})
+        <li>
+            <a href="${HopeTag.GetItemLink($art.GeneralID)}">$cat.name
+
+            </a>
+        </li>
+        #end #else
+        <li>
+            <a href="${HopeTag.GetCategoryLink($cat.NodeID)}" title="${cat.NodeTips}">$cat.Name
+
+            </a>
+        </li>
+        #end #end
+    </div>
+</div>
+<!--E sidebar-->
+
+
+
+<!-- S content.html-->
+<main class="content">
+    <div class="achievement container">
+        <div class="achiecontainer">
+            ####################### my location
+            <div class="article">
+                <div class="article_left">
+                    <div class="article_left_contain">
+                        <h1 class="article_title">
+                            ${HopeTag.Article.Title}
+                        </h1>
+                        <li class="article_detail">
+
+                            <span class="name">作者：${HopeTag.GetValue("Author")}</span>
+                            #if(${HopeTag.GetValue("Source")} == '')
+                            <span class="sourse">文章来源：${HopeTag.GetValue("CopyFrom")}</span>
+                            #end
+                            <span class="hitPoint">点击数：${HopeTag.Article.Hits}</span>
+                            <span class="time">更新时间：${HopeTag.FormatDateTime(${HopeTag.Article.UpdateTime})}</span>
+                        </li>
+                        <div class="main_article">
+                            ${HopeTag.GetValue("Content")}
+                            <span class="article_footer">文章录入：${HopeTag.GetValue("Author")}</span>
+                            <span class="article_footer">责任编辑：${HopeTag.GetValue("Author")}</span>
+                        </div>
+                    </div>
+
+                    <!-- Pager-->
+                    <!--S pager-->
+                    <div class="pager">
+                        ${HopeTag.PrevNextArticle}
+                    </div>
+                    <!--E pager-->
+                </div>
+            </div>
+            #################sidebar
+            <div class="clearfloat"></div>
+        </div>
+    </div>
+    </div>
+</main>
+<!-- E content.html-->
+
+<!-- S column.html -->
+
+<!-- main content -->
+<main class="content">
+        <div class="achievement container">
+            <div class="achiecontainer">
+                ####################### my location
+                <div class="article">
+                    <div class="card-l">
+                        <!-- S cards -->
+                        <div>
+                            <a href="">
+                                <img src="../images/card_01.jpg">
+                            </a>
+                            <a href="">
+                                <h>
+                                    </br>&nbsp;&nbsp;&nbsp;全自动倒置荧光显微镜
+                                </h>
+                            </a>
+                            <a href="">
+                                <p>
+                                    倒置荧光显微镜是近代发展起来的新式荧光显微镜，就其光路来分有两种：一是透射式荧光显微镜，激发光源是通过聚光镜穿过标本材料来激发荧光的。二是落射式荧光显微镜，这是近……
+                                </p>
+                            </a>
+                        </div>
+                        <!-- E cards -->
+                    </div>
+                </div>
+            </div>
+    </main>
+    <!-- E mian -->
+<!-- E column.html -->
+
+<!-- S column2.html teacher-->
+
+<!-- E column2.html -->
