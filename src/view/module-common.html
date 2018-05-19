@@ -28,7 +28,23 @@
         </div>
         <ul id="nav-item">
             <!-- nav item -->
-            ########课程概况 #set($Cat = ${HopeTag.GetCategory(149)})
+            ########课程概况 
+#set($Cat = ${HopeTag.GetCategory(149)})
+            <li class="nav-items">
+                <a href="${HopeTag.GetCategoryLink($Cat.NodeID)}"> $Cat.name</a>
+                <!-- drop down menu-->
+                <ul class="drop-down">
+                    #foreach($cat in ${HopeTag.CategorySource($Cat.NodeID)})
+                    <li class="nav-items">
+                        <a href="${HopeTag.GetCategoryLink($cat.NodeID)}"> $cat.name</a>
+                    </li>
+                    #end
+                </ul>
+            </li>
+            <!-- nav item -->
+            <!-- nav item -->
+            ########教学团队 
+#set($Cat = ${HopeTag.GetCategory(158)})
             <li class="nav-items">
                 <a href="${HopeTag.GetCategoryLink($Cat.NodeID)}">$Cat.name</a>
                 <!-- drop down menu-->
@@ -42,7 +58,8 @@
             </li>
             <!-- nav item -->
             <!-- nav item -->
-            ########教学团队 #set($Cat = ${HopeTag.GetCategory(158)})
+            ########教学资源 
+#set($Cat = ${HopeTag.GetCategory(1445)})
             <li class="nav-items">
                 <a href="${HopeTag.GetCategoryLink($Cat.NodeID)}">$Cat.name</a>
                 <!-- drop down menu-->
@@ -56,7 +73,8 @@
             </li>
             <!-- nav item -->
             <!-- nav item -->
-            ########教学资源 #set($Cat = ${HopeTag.GetCategory(1445)})
+            ########学习资料 
+#set($Cat = ${HopeTag.GetCategory(1449)})
             <li class="nav-items">
                 <a href="${HopeTag.GetCategoryLink($Cat.NodeID)}">$Cat.name</a>
                 <!-- drop down menu-->
@@ -70,7 +88,8 @@
             </li>
             <!-- nav item -->
             <!-- nav item -->
-            ########学习资料 #set($Cat = ${HopeTag.GetCategory(1449)})
+            ########教研成果 
+#set($Cat = ${HopeTag.GetCategory(1450)})
             <li class="nav-items">
                 <a href="${HopeTag.GetCategoryLink($Cat.NodeID)}">$Cat.name</a>
                 <!-- drop down menu-->
@@ -84,7 +103,8 @@
             </li>
             <!-- nav item -->
             <!-- nav item -->
-            ########教研成果 #set($Cat = ${HopeTag.GetCategory(1450)})
+            ########教学改革 
+#set($Cat = ${HopeTag.GetCategory(166)})
             <li class="nav-items">
                 <a href="${HopeTag.GetCategoryLink($Cat.NodeID)}">$Cat.name</a>
                 <!-- drop down menu-->
@@ -98,21 +118,8 @@
             </li>
             <!-- nav item -->
             <!-- nav item -->
-            ########教学改革 #set($Cat = ${HopeTag.GetCategory(166)})
-            <li class="nav-items">
-                <a href="${HopeTag.GetCategoryLink($Cat.NodeID)}">$Cat.name</a>
-                <!-- drop down menu-->
-                <ul class="drop-down">
-                    #foreach($cat in ${HopeTag.CategorySource($Cat.NodeID)})
-                    <li class="nav-items">
-                        <a href="${HopeTag.GetCategoryLink($cat.NodeID)}">$cat.name</a>
-                    </li>
-                    #end
-                </ul>
-            </li>
-            <!-- nav item -->
-            <!-- nav item -->
-            #########下载中心 #set($Cat = ${HopeTag.GetCategory(443)})
+            #########下载中心 
+#set($Cat = ${HopeTag.GetCategory(443)})
             <li class="nav-items">
                 <a href="${HopeTag.GetCategoryLink($Cat.NodeID)}">$Cat.name</a>
                 <!-- drop down menu-->
