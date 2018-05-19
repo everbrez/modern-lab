@@ -237,3 +237,21 @@ footer {
     vertical-align: middle;
     display: inline-block;
 }
+#hopePager {
+    position: relative;
+    text-align: center;
+    margin: 10px 0 35px 0;
+    .inputPager_des{
+        position: absolute;
+        left: 0;
+    }
+    .inputPager_page {
+        display: inline-block;
+    }
+    #pageNum {
+        display: none;
+    }
+    #btnPage {
+        display: none;
+    }
+}
