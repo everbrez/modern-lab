@@ -11,54 +11,44 @@ $icon_3,
 $icon_4,
 $icon_5,
 $icon_6,
+$book,
+$flask,
+$test,
 $grid {
   .#{nth($icon,10)} {
     @include sprite($icon);
   }
 }
 
+.clearfix {
+  clear: both;
+}
+
 //index
-.slide img{
+.slide img {
   width: 100%;
 }
 
 // news
 #news {
-  .active {
-    &::after,
-    &::before {
-      position: absolute;
-      content: '';
-      display: inline-block;
-    }
-    &::after {
-      width: 100%;
-      height: 3px;
-      background: #4a78a8;
-      bottom: -5px;
-      left: 0;
-      border: {
-        color: #7d7d7d;
-        style: none none solid none;
-        width: 1px;
-      }
-    }
-    &::before {
-      border: {
-        width: 4px;
-        style: solid;
-        color:transparent transparent#4a78a8 transparent;
-      }
-      left:47%;
-      bottom: -2px;
+  #news-header {
+    border: {
+      width: 1px;
+      color: #7d7d7d;
+      bottom-style: solid;
     }
   }
-  padding-top: 20px;
+  hgroup {
+    display: inline-block;
+  }
+  .css_search_form {
+    line-height: 55px;
+  }
   margin-bottom: 20px;
   @each $className in news-lists,
   plan-lists,
   expriment-lists {
-    .#{$className}~section:not(.#{$className}):not(.news-left) {
+    .#{$className}+section .lists:not(.#{$className}) {
       display: none;
     }
   }
@@ -68,16 +58,19 @@ $grid {
       font-size: 22px;
       margin-right: 1em;
       position: relative;
-      padding:  0 .2em;
-      margin-bottom: 10px;
+      a{
+        line-height: 55px;
+        display: inline-block;
+        padding-right: 1em;
+      }
     }
     margin-bottom: 2em;
   }
   .news-left {
     display: inline-block;
-    width: 30%;
-    padding-right: 2em;
+    margin-top: 25px;
     img {
+      width: 400px;
       display: block;
       width: 100%;
     }
@@ -85,34 +78,55 @@ $grid {
       display: block;
       text-align: center;
       font-size: 28px;
+      margin: 40px 0;
     }
-    @media screen and (max-width: 900px) {
+    @media screen and (max-width: 1200px) {
       display: none;
     }
   }
   .lists {
     display: inline-block;
-    width: 60%;
+    width: 63%;
     font-size: 20px;
     float: right;
-    @media screen and (max-width: 900px) {
+    @media screen and (max-width: 1200px) {
       width: 100%;
     }
     .lists-item {
-      list-style: initial;
       margin-left: 1em;
+      overflow: hidden;
+      white-space: nowrap;
       a {
-        line-height: 200%;
-        display: block;
+        line-height: 48px;
+        display: inline-block;
+        max-width: 70%;
+        span {
+          display: inline-block;
+          width: 100%;
+          text-overflow: ellipsis;
+          overflow: hidden;
+          vertical-align: middle;
+        }
       }
     }
-    border: {
-      color: #505050;
-      width: 1px;
-      style: none none dashed none;
+    li {
+      border: {
+        color: #505050;
+        width: 1px;
+        style: none none dashed none;
+      }
+      a::before {
+        content: '●';
+        display: inline-block;
+        color: #505050;
+      }
     }
     time {
       float: right;
+      line-height: 48px;
+      @media screen and (max-width: 638px) {
+        display: none;
+      }
     }
   }
   .container::after {
@@ -128,7 +142,7 @@ $grid {
   background-color: #e5e5e5;
   .container {
     & .ti {
-      height: 130px;
+      margin-bottom: 37px;
       padding-top: 33px;
       color: #4a78a8;
       font-size: 20px;
@@ -141,7 +155,7 @@ $grid {
           vertical-align: middle;
         }
         font-size:25px;
-        margin-bottom:5px;
+        margin-bottom:15px;
       }
     }
   }
@@ -152,11 +166,13 @@ $grid {
     display: inline-block;
     margin-bottom: 20px;
     .sources-decription {
+      background: #f0f0f0;
+      line-height: 67px;
       display: block;
       text-align: center;
       width: 100%;
-      font-size: 20px;
-      line-height: 200%;
+      font-size: 18px;
+      color: #000;
     }
     img {
       width: 100%;
@@ -171,13 +187,33 @@ $grid {
   .sources-items {
     display: flex;
     flex-flow: row wrap;
-    justify-content: space-around;
-    padding-bottom: 20px;
+    justify-content: space-between;
+    @media screen and (max-width: 900px) {
+      justify-content: space-around;
+    }
+    padding-bottom: 25px;
+    .sources-item {
+      a {
+        display: inline-block;
+        overflow: hidden;
+        figure {
+          margin: 0;
+          max-height: 257px;
+          overflow: hidden;
+          img {
+            transition: transform ease-in-out .5s;
+            &:hover {
+              transform: scale(1.3);
+            }
+          }
+        }
+      }
+    }
   }
 }
 
 .list {
-  padding-top: 40px;
+  padding-top: 35px;
   max-width: 1200px;
   margin: auto;
   .list-item {
@@ -185,6 +221,10 @@ $grid {
     text-align: center;
     width: 33.333%;
     margin-bottom: 38px;
+    .ti {
+      margin-top: 18px;
+      color: #000;
+    }
   }
   @media screen and (max-width:778px) {
     .list-item {
@@ -275,4 +315,28 @@ $grid {
       }
     }
   }
+}
+$color-theme: #4a78a8;
+.active span {
+  height: 3px;
+  width: 100%;
+  display: block;
+  background: $color-theme;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.active::after {
+  content: "";
+  display: block;
+  border-top: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-left: 5px solid transparent;
+  border-bottom: 5px solid $color-theme;
+  position: absolute;
+  bottom: 3px;
+  left: 48%;
+}
+.active {
+  color: $color-theme;
 }
