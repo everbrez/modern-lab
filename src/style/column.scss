@@ -90,7 +90,8 @@ a{
 }
 
 .card-l img{
-	padding: 5px 5px 20px;
+	width: 260px;
+	margin: 5px 5px 20px;
 	float: left;
 }
 .card-l p{
@@ -126,12 +127,9 @@ a{
 	
 }
 .card-left div{
-	width: 790px;
-	height: 220px;
-	padding: 5px 18px 0;
 	overflow: hidden;
 	max-width: 98%;
-	
+	margin-bottom: 18px;
 	
 }
 .card-left img{
@@ -146,6 +144,18 @@ a{
 	color:#000;
 	font-family: "Microsoft YaHei";
 	line-height: 25px;
+}
+$color-theme: #4a78a8;
+.teacher-item {
+	.avater {
+		img{
+			width: 150px;
+		}
+	}
+	.name {
+		color: $color-theme;
+
+	}
 }
 
 .pro{
@@ -202,10 +212,28 @@ a{
 	.card-left img {
 		display: none;
 	}
-	.card-left li {
+	.card-left li,
+	.name {
 		margin-left: 0;
+	}
+	.card-left li {
+		margin: .5em 0;
 	}
 	.card-left div{
 		height: auto;
+	}
+	.teacher-item {
+		border-bottom: solid #e5e5e5 2px;
+		padding-bottom: 1em;
+		&:last-child {
+			border: none;
+		}
+	}
+}
+.teacher-item {
+	border-bottom: solid #e5e5e5 2px;
+	padding-bottom: 1em;
+	&:last-child {
+		border: none;
 	}
 }
