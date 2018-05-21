@@ -59,7 +59,7 @@
             <!-- nav item -->
             <!-- nav item -->
             ########教学资源 
-#set($Cat = ${HopeTag.GetCategory(1445)})
+#set($Cat = ${HopeTag.GetCategory(441)})
             <li class="nav-items">
                 <a href="${HopeTag.GetCategoryLink($Cat.NodeID)}">$Cat.name</a>
                 <!-- drop down menu-->
@@ -74,7 +74,7 @@
             <!-- nav item -->
             <!-- nav item -->
             ########学习资料 
-#set($Cat = ${HopeTag.GetCategory(1449)})
+#set($Cat = ${HopeTag.GetCategory(442)})
             <li class="nav-items">
                 <a href="${HopeTag.GetCategoryLink($Cat.NodeID)}">$Cat.name</a>
                 <!-- drop down menu-->
@@ -89,7 +89,7 @@
             <!-- nav item -->
             <!-- nav item -->
             ########教研成果 
-#set($Cat = ${HopeTag.GetCategory(1450)})
+#set($Cat = ${HopeTag.GetCategory(165)})
             <li class="nav-items">
                 <a href="${HopeTag.GetCategoryLink($Cat.NodeID)}">$Cat.name</a>
                 <!-- drop down menu-->
@@ -187,6 +187,7 @@
     <div class="locationInfo">
         <i class="location-icon"></i>
         ${HopeTag.Breadcrumbs}
+        ${HopeTag.SearchBar()}
     </div>
 </div>
 <!-- E location -->
@@ -204,20 +205,24 @@
             <a href="${HopeTag.GetCategoryLink(${HopeTag.ParentCategoryID})}" class="sidebar-header">
                 <i class="sidebar-icon icon"></i>${HopeTag.GetCategoryName(${HopeTag.ParentCategoryID})}</a>
         </li>
-        #end #foreach($cat in ${HopeTag.CategorySource(${HopeTag.ParentCategoryID})}) #if($cat.NodeID == 171 || $cat.NodeID == 176)
+        #end 
+        #foreach($cat in ${HopeTag.CategorySource(${HopeTag.ParentCategoryID})}) 
+        #if($cat.NodeID == 171 || $cat.NodeID == 176)
         #foreach($art in ${HopeTag.ArticlePageSource($cat.NodeID,false,1)})
         <li>
             <a href="${HopeTag.GetItemLink($art.GeneralID)}">$cat.name
 
             </a>
         </li>
-        #end #else
+        #end 
+        #else
         <li>
             <a href="${HopeTag.GetCategoryLink($cat.NodeID)}" title="${cat.NodeTips}">$cat.Name
 
             </a>
         </li>
-        #end #end
+        #end 
+        #end
     </div>
 </div>
 <!--E sidebar-->
