@@ -1,75 +1,85 @@
 @import 'common';
-	/*css                   */
-body{
-	background-color:#f5f5f5; 
+/*css                   */
+
+body {
+	background-color: #f5f5f5;
 }
-.center{
+
+.center {
 	background-color: #ffffff;
 	display: block;
-	margin:0  18.75% 0;
+	margin: 0 18.75% 0;
 	/*width: 1200px; */
 	padding-bottom: 40px;
 	font-family: "Microsoft YaHei";
-	font-size: 18px;	
-	box-shadow:0px 6px 8px #b1b1b1; 
-}
-.center a{
-	color: #000;
-}
-a{
-	text-decoration:none;
-}
-.location{
-	padding: 10px  20px;
-	border-bottom: solid #e5e5e5 2px;
-	margin: 0 10px 10px;
+	font-size: 18px;
+	box-shadow: 0px 6px 8px #b1b1b1;
 }
 
-.search{
+.center a {
+	color: #000;
+}
+
+a {
+	text-decoration: none;
+}
+
+.location {
+	padding: 10px 20px;
+	border-bottom: solid #e5e5e5 2px;
+	margin: 0 10px 10px;
+	.css_search_form {
+		line-height: 42px;
+	}
+}
+
+.search {
 	float: right;
 	padding-left: 0;
 	margin-left: 0;
 	margin-bottom: 10px;
 	border-top-right-radius: 10px;
 	border-bottom-right-radius: 10px;
-	outline:none;
+	outline: none;
 	height: 30px;
 	width: 40px;
 	background-color: #4a78a8;
-	
 }
- #input-test{
-    color:#4a78a8;
-    font-size: 14.58px;
+
+#input-test {
+	color: #4a78a8;
+	font-size: 14.58px;
 	float: right;
 	border-top-left-radius: 10px;
 	border-bottom-left-radius: 10px;
 	border: solid #4a78a8 1px;
 	outline-style: none;
-	padding-left:10px;
-	padding-right: 0; 
+	padding-left: 10px;
+	padding-right: 0;
 	margin-right: 0;
 	height: 26px;
 	width: 126px;
-	
-        
 }
-#input-test::-webkit-input-placeholder{
-        color:#4a78a8;
-        font-size: 14.58px;
+
+#input-test::-webkit-input-placeholder {
+	color: #4a78a8;
+	font-size: 14.58px;
 }
-#input-text::-moz-placeholder{  
-        color:#4a78a8;
-        font-size: 14.58px;       
+
+#input-text::-moz-placeholder {
+	color: #4a78a8;
+	font-size: 14.58px;
 }
-#input-text:-ms-input-placeholder{ 
-       color:#4a78a8;
-        font-size: 14.58px;      
+
+#input-text:-ms-input-placeholder {
+	color: #4a78a8;
+	font-size: 14.58px;
 }
 
 /*卡片栏目*/
-.card-l > div{
-	border: solid #4cb2d4 1px ;
+
+.card-l>div {
+	border: solid #4cb2d4 1px;
 	height: 200px;
 	width: 48.64%;
 	overflow: hidden;
@@ -77,137 +87,140 @@ a{
 	display: inline-block;
 	margin: 11px 5px;
 	min-width: 280px;
-	
-	
-}
-.card-l{
-	clear: both;
-	padding: 10px 10px;
-	// display: flex;
-	// flex-flow: row wrap;
-	// justify-content: space-around;
-	
 }
 
-.card-l img{
+.card-l {
+	clear: both;
+	padding: 10px 10px; // display: flex;
+	// flex-flow: row wrap;
+	// justify-content: space-around;
+}
+
+.card-l img {
 	width: 260px;
 	margin: 5px 5px 20px;
 	float: left;
 }
-.card-l p{
-	text-indent:2em;
+
+.card-l p {
+	text-indent: 2em;
 	margin-left: 265px;
 	padding: 0 22px 20px;
-	font-size:14px;
-	color:#535353;
+	font-size: 14px;
+	color: #535353;
 	font-family: "Microsoft YaHei";
 	line-height: 25px;
 }
-.card-l h{
-	font-size:18px;
-	color:#000000;
+
+.card-l h {
+	font-size: 18px;
+	color: #000000;
 	font-family: "Microsoft YaHei";
 }
 
-.button p{
-	text-indent:2em;
+.button p {
+	text-indent: 2em;
 	margin-bottom: 20px;
-	font-size:18px;
-	color:#000;
+	font-size: 18px;
+	color: #000;
 	font-family: "Microsoft YaHei";
-	
 }
-.button div{
+
+.button div {
 	text-align: center;
 	margin-top: -44px;
-	
 }
+
 .card-left {
 	width: 100%;
-	
 }
-.card-left div{
+
+.card-left div {
 	overflow: hidden;
 	max-width: 98%;
 	margin-bottom: 18px;
-	
 }
-.card-left img{
+
+.card-left img {
 	float: left;
 }
 
-.card-left li{
-	list-style-type:none;
+.card-left li {
+	list-style-type: none;
 	margin-left: 185px;
 	overflow: hidden;
-	font-size:14px;
-	color:#000;
+	font-size: 14px;
+	color: #000;
 	font-family: "Microsoft YaHei";
 	line-height: 25px;
 }
+
 $color-theme: #4a78a8;
 .teacher-item {
 	.avater {
-		img{
+		img {
 			width: 150px;
 		}
 	}
 	.name {
 		color: $color-theme;
-
 	}
 }
 
-.pro{
-	font-size:14px;
-	color:#000;
+.pro {
+	font-size: 14px;
+	color: #000;
 	font-family: "Microsoft YaHei";
 	margin-left: 8px;
 }
 
-.name{
-	font-size:18px;
+.name {
+	font-size: 18px;
 	font-family: "Microsoft YaHei";
 	margin-left: 36px;
 	margin-top: 18px;
 }
-.intro{
+
+.intro {
 	padding-top: 16px;
 }
 
-.card-right{ 
-	width:31.5%;
+.card-right {
+	width: 31.5%;
 	float: right;
 	position: relative;
 	bottom: 2225px;
-	left:140px;
+	left: 140px;
 }
 
-.card-right a{
-	font-size:18px;
-	color:#4a78a8;
+.card-right a {
+	font-size: 18px;
+	color: #4a78a8;
 	font-family: "Microsoft YaHei";
 	position: relative;
 	bottom: 10px;
-	text-align:center;
+	text-align: center;
 	vertical-align: middle;
 }
+
 @media screen and (max-width: 1138px) {
-	.card-l > div {
+	.card-l>div {
 		width: 98%;
 	}
 }
+
 @media screen and (max-width: 550px) {
-	.card-l > div img {
+	.card-l>div img {
 		display: none;
 	}
 	.card-l p {
-		margin:0;
+		margin: 0;
 	}
-	.card-l > div{
+	.card-l>div {
 		height: auto;
 	}
 }
+
 @media screen and (max-width: 500px) {
 	.card-left img {
 		display: none;
@@ -219,7 +232,7 @@ $color-theme: #4a78a8;
 	.card-left li {
 		margin: .5em 0;
 	}
-	.card-left div{
+	.card-left div {
 		height: auto;
 	}
 	.teacher-item {
@@ -230,10 +243,30 @@ $color-theme: #4a78a8;
 		}
 	}
 }
+
 .teacher-item {
 	border-bottom: solid #e5e5e5 2px;
 	padding-bottom: 1em;
 	&:last-child {
 		border: none;
 	}
+}
+
+.inputPager_des{
+	display: none;
+}
+.list_time {
+	float: right;
+}
+
+.main_box {
+	width: 100%;
+}
+
+.main_box li {
+	color: #505050;
+	font: 16px "Microsoft YaHei";
+	list-style: none;
+	padding: 18px 0px;
+	border-bottom: dashed #505050 1px;
 }
