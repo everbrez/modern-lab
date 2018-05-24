@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>${HopeTag.PageTitle}</title>
-    <base target="_blank">
+    <link rel="icon" href="${HopeTag.InstallDir}Skin/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="${HopeTag.InstallDir}Skin/favicon.ico" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> ${HopeTag.MetaKeywords} ${HopeTag.GetSkin_CSS("modernlab_2018")}
     <script src="${HopeTag.InstallDir}JS/index.js.js"></script>
 </head>
@@ -29,8 +30,7 @@
         </div>
         <ul id="nav-item">
             <!-- nav item -->
-            ########课程概况 
-#set($Cat = ${HopeTag.GetCategory(149)})
+            ########课程概况 #set($Cat = ${HopeTag.GetCategory(149)})
             <li class="nav-items">
                 <a href="${HopeTag.GetCategoryLink($Cat.NodeID)}"> $Cat.name</a>
                 <!-- drop down menu-->
@@ -44,8 +44,7 @@
             </li>
             <!-- nav item -->
             <!-- nav item -->
-            ########教学团队 
-#set($Cat = ${HopeTag.GetCategory(158)})
+            ########教学团队 #set($Cat = ${HopeTag.GetCategory(158)})
             <li class="nav-items">
                 <a href="${HopeTag.GetCategoryLink($Cat.NodeID)}">$Cat.name</a>
                 <!-- drop down menu-->
@@ -59,8 +58,7 @@
             </li>
             <!-- nav item -->
             <!-- nav item -->
-            ########教学资源 
-#set($Cat = ${HopeTag.GetCategory(441)})
+            ########教学资源 #set($Cat = ${HopeTag.GetCategory(441)})
             <li class="nav-items">
                 <a href="${HopeTag.GetCategoryLink($Cat.NodeID)}">$Cat.name</a>
                 <!-- drop down menu-->
@@ -74,8 +72,7 @@
             </li>
             <!-- nav item -->
             <!-- nav item -->
-            ########学习资料 
-#set($Cat = ${HopeTag.GetCategory(442)})
+            ########学习资料 #set($Cat = ${HopeTag.GetCategory(442)})
             <li class="nav-items">
                 <a href="${HopeTag.GetCategoryLink($Cat.NodeID)}">$Cat.name</a>
                 <!-- drop down menu-->
@@ -89,8 +86,7 @@
             </li>
             <!-- nav item -->
             <!-- nav item -->
-            ########教研成果 
-#set($Cat = ${HopeTag.GetCategory(165)})
+            ########教研成果 #set($Cat = ${HopeTag.GetCategory(165)})
             <li class="nav-items">
                 <a href="${HopeTag.GetCategoryLink($Cat.NodeID)}">$Cat.name</a>
                 <!-- drop down menu-->
@@ -104,8 +100,7 @@
             </li>
             <!-- nav item -->
             <!-- nav item -->
-            ########教学改革 
-#set($Cat = ${HopeTag.GetCategory(166)})
+            ########教学改革 #set($Cat = ${HopeTag.GetCategory(166)})
             <li class="nav-items">
                 <a href="${HopeTag.GetCategoryLink($Cat.NodeID)}">$Cat.name</a>
                 <!-- drop down menu-->
@@ -119,8 +114,7 @@
             </li>
             <!-- nav item -->
             <!-- nav item -->
-            #########下载中心 
-#set($Cat = ${HopeTag.GetCategory(443)})
+            #########下载中心 #set($Cat = ${HopeTag.GetCategory(443)})
             <li class="nav-items">
                 <a href="${HopeTag.GetCategoryLink($Cat.NodeID)}">$Cat.name</a>
                 <!-- drop down menu-->
@@ -187,8 +181,7 @@
 <div class="location">
     <div class="locationInfo">
         <i class="location-icon"></i>
-        ${HopeTag.Breadcrumbs}
-        ${HopeTag.SearchBar()}
+        ${HopeTag.Breadcrumbs} ${HopeTag.SearchBar()}
     </div>
 </div>
 <!-- E location -->
@@ -206,24 +199,20 @@
             <a href="${HopeTag.GetCategoryLink(${HopeTag.ParentCategoryID})}" class="sidebar-header">
                 <i class="sidebar-icon icon"></i>${HopeTag.GetCategoryName(${HopeTag.ParentCategoryID})}</a>
         </li>
-        #end 
-        #foreach($cat in ${HopeTag.CategorySource(${HopeTag.ParentCategoryID})}) 
-        #if($cat.NodeID == 171 || $cat.NodeID == 176)
+        #end #foreach($cat in ${HopeTag.CategorySource(${HopeTag.ParentCategoryID})}) #if($cat.NodeID == 171 || $cat.NodeID == 176)
         #foreach($art in ${HopeTag.ArticlePageSource($cat.NodeID,false,1)})
         <li>
             <a href="${HopeTag.GetItemLink($art.GeneralID)}">$cat.name
 
             </a>
         </li>
-        #end 
-        #else
+        #end #else
         <li>
             <a href="${HopeTag.GetCategoryLink($cat.NodeID)}" title="${cat.NodeTips}">$cat.Name
 
             </a>
         </li>
-        #end 
-        #end
+        #end #end
     </div>
 </div>
 <!--E sidebar-->
@@ -277,33 +266,33 @@
 
 <!-- main content -->
 <main class="content">
-        <div class="achievement container">
-            <div class="achiecontainer">
-                ####################### my location
-                <div class="article">
-                    <div class="card-l">
-                        <!-- S cards -->
-                        <div>
-                            <a href="">
-                                <img src="../images/card_01.jpg">
-                            </a>
-                            <a href="">
-                                <h>
-                                    </br>&nbsp;&nbsp;&nbsp;全自动倒置荧光显微镜
-                                </h>
-                            </a>
-                            <a href="">
-                                <p>
-                                    倒置荧光显微镜是近代发展起来的新式荧光显微镜，就其光路来分有两种：一是透射式荧光显微镜，激发光源是通过聚光镜穿过标本材料来激发荧光的。二是落射式荧光显微镜，这是近……
-                                </p>
-                            </a>
-                        </div>
-                        <!-- E cards -->
+    <div class="achievement container">
+        <div class="achiecontainer">
+            ####################### my location
+            <div class="article">
+                <div class="card-l">
+                    <!-- S cards -->
+                    <div>
+                        <a href="">
+                            <img src="../images/card_01.jpg">
+                        </a>
+                        <a href="">
+                            <h>
+                                </br>&nbsp;&nbsp;&nbsp;全自动倒置荧光显微镜
+                            </h>
+                        </a>
+                        <a href="">
+                            <p>
+                                倒置荧光显微镜是近代发展起来的新式荧光显微镜，就其光路来分有两种：一是透射式荧光显微镜，激发光源是通过聚光镜穿过标本材料来激发荧光的。二是落射式荧光显微镜，这是近……
+                            </p>
+                        </a>
                     </div>
+                    <!-- E cards -->
                 </div>
             </div>
-    </main>
-    <!-- E mian -->
+        </div>
+</main>
+<!-- E mian -->
 <!-- E column.html -->
 
 <!-- S column2.html teacher-->
@@ -313,227 +302,290 @@
 
 #foreach($article in ${HopeTag.ArticleListSource(183,true,8)})
 <tr> #if ($article.Priority == 0)
-  <td width="10" valign=top align=left><img src="${HopeTag.InstallDir}skin/cdbm/images/Article_common4.gif" alt="普通
+    <td width="10" valign=top align=left>
+        <img src="${HopeTag.InstallDir}skin/cdbm/images/Article_common4.gif" alt="普通
 
-文章" 
+文章" style="margin-left:3px;" />
+    </td>
+    #else
+    <td width="10" valign="top">
+        <img src="${HopeTag.InstallDir}skin/cdbm/images/Article_ontop4.gif" alt="置顶文章" />
+    </td>
+    #end
 
-style="margin-left:3px;" /></td>
-  #else
-  <td width="10" valign="top" ><img src="${HopeTag.InstallDir}skin/cdbm/images/Article_ontop4.gif" alt="置顶文章" 
+    <td class="">
+        <a class="" href="${HopeTag.GetItemLink(${article.GeneralID})}" title="$article.Title" target="_self">
 
-/></td>
-  #end
-  
-  <td class=""><a class="" href="${HopeTag.GetItemLink(${article.GeneralID})}" title="$article.Title" target="_self">
-
-${HopeTag.FormatTitle("$article.Title",30)}</a></td>
-  </tr>
+            ${HopeTag.FormatTitle("$article.Title",30)}</a>
+    </td>
+</tr>
 #end
 </table>
 <!--文章列表结束-->
 
 
 <!-- S index-content -->
-    <!-- main content -->
-    <main>
-        <!--slider-->
-        <div class="slide">
-            <img src="${HopeTag.InstallDir}Skin/images/769932892bfa5512eb52e1d68ebab6e8.png">
-        </div>
-        <!--news list-->
-        <section id="news">
-            <div class="container">
-                <header id="news-header" class="news-lists">
-                    <hgroup>
-                        <h1 id="news-lists" class="active">
-                            <a href="${HopeTag.GetCategoryLink(183)}">
-                                <i class="icon test"></i>
-                                教学新闻
-                            </a>
-                            <span></span>
-                        </h1>
-                        <h1 id="plan-lists">
-                            <a href="${HopeTag.GetCategoryLink(161)}">
-                                <i class="icon book"></i>
-                                电子教案
-                            </a>
-                            <span></span>
-                        </h1>
-                        <h1 id="expriment-lists">
-                            <a href="${HopeTag.GetCategoryLink(162)}">
-                                <i class="icon flask"></i>
-                                开放实验
-                            </a>
-                            <span></span>
-                        </h1>
-                    </hgroup>
-                    <!-- search button-->
-                    <form action="http://ce.sysu.edu.cn/echemi/modernlab/search.aspx" method="post" name="Search" class="css_search_form">
-                        <input type="text" name="Keyword" class="search_text">
-                        <input type="submit" value="搜索" class="search_button">
-                        <input type="hidden" name="IsFuzzy" value="on">
-                    </form>
-                </header>
-                <section class="clearfix">
-                    <section class="news-left">
-                        <img src="${HopeTag.InstallDir}Skin/images/e037eb4605b28ae9b6ac688eeeec88c5.png">
-                        <span class="description">
-                            经世致用，知行合一
-                        </span>
-                    </section>
-                    <section class="lists news-lists">
-                        <ul>
-                                #foreach($article in ${HopeTag.ArticleListSource(183,true,8)})
-                            <!-- list -->
-                            <li class="lists-item">
-                                <a href="${HopeTag.GetItemLink(${article.GeneralID})}" title="$article.Title" target="_self">
-                                        #if ($article.Priority == 0)
-                                    <i class="icon"></i>
-                                    #else
-                                    <i class="icon icon-new"></i>
-                                    #end
-                                    <span>$article.Title</span>
-                                </a>
-                                <time>${HopeTag.FormatDateTime($article.UpdateTime)}</time>
-                            </li>
-                            #end
-                        </ul>
-                    </section>
-                    <section class="lists plan-lists">
-                            <ul>
-                                    #foreach($article in ${HopeTag.ArticleListSource(161,true,8)})
-                                <!-- list -->
-                                <li class="lists-item">
-                                    <a href="${HopeTag.GetItemLink(${article.GeneralID})}" title="$article.Title" target="_self">
-                                            #if ($article.Priority == 0)
-                                        <i class="icon"></i>
-                                        #else
-                                        <i class="icon icon-new"></i>
-                                        #end
-                                        <span>$article.Title</span>
-                                    </a>
-                                    <time>${HopeTag.FormatDateTime($article.UpdateTime)}</time>
-                                </li>
-                                #end
-                            </ul>
-                    </section>
-                    <section class="lists expriment-lists">
-                            <ul>
-                                    #foreach($article in ${HopeTag.ArticleListSource(162,true,8)})
-                                <!-- list -->
-                                <li class="lists-item">
-                                    <a href="${HopeTag.GetItemLink(${article.GeneralID})}" title="$article.Title" target="_self">
-                                            #if ($article.Priority == 0)
-                                        <i class="icon"></i>
-                                        #else
-                                        <i class="icon icon-new"></i>
-                                        #end
-                                        <span>$article.Title</span>
-                                    </a>
-                                    <time>${HopeTag.FormatDateTime($article.UpdateTime)}</time>
-                                </li>
-                                #end
-                            </ul>
-                    </section>
+<!-- main content -->
+<main>
+    <!--slider-->
+    <div class="slide">
+        <img src="${HopeTag.InstallDir}Skin/images/769932892bfa5512eb52e1d68ebab6e8.png">
+    </div>
+    <!--news list-->
+    <section id="news">
+        <div class="container">
+            <header id="news-header" class="news-lists">
+                <hgroup>
+                    <h1 id="news-lists" class="active">
+                        <a href="${HopeTag.GetCategoryLink(183)}">
+                            <i class="icon test"></i>
+                            教学新闻
+                        </a>
+                        <span></span>
+                    </h1>
+                    <h1 id="plan-lists">
+                        <a href="${HopeTag.GetCategoryLink(161)}">
+                            <i class="icon book"></i>
+                            电子教案
+                        </a>
+                        <span></span>
+                    </h1>
+                    <h1 id="expriment-lists">
+                        <a href="${HopeTag.GetCategoryLink(162)}">
+                            <i class="icon flask"></i>
+                            开放实验
+                        </a>
+                        <span></span>
+                    </h1>
+                </hgroup>
+                <!-- search button-->
+                <form action="http://ce.sysu.edu.cn/echemi/modernlab/search.aspx" method="post" name="Search" class="css_search_form">
+                    <input type="text" name="Keyword" class="search_text">
+                    <input type="submit" value="搜索" class="search_button">
+                    <input type="hidden" name="IsFuzzy" value="on">
+                </form>
+            </header>
+            <section class="clearfix">
+                <section class="news-left">
+                    <img src="${HopeTag.InstallDir}Skin/images/e037eb4605b28ae9b6ac688eeeec88c5.png">
+                    <span class="description">
+                        经世致用，知行合一
+                    </span>
                 </section>
-            </div>
-        </section>
-
-
-
-        <!--sources-->
-        <div class="sources">
-            <div class="container">
-
-                <div class="ti">
-                    <a href="${HopeTag.GetCategoryLink(441)}">
-                        <i class="icon grid"></i>
-                        <span>教学资源</span>
-                    </a>
-                    <span class="sources-decription">精密仪器，技术领先</span>
-                </div>
-
-                <ul class="sources-items">
-                    <li class="sources-item">
-                        <a href="#">
-                            <figure>
-                                <img src="${HopeTag.InstallDir}Skin/images/2bc97717a7aef3dc54b97d1b9b2c3cca.png">
-                            </figure>
-                            <div class="sources-decription">电感耦合等离子体质谱仪</div>
-                        </a>
-                    </li>
-                    <li class="sources-item">
-                        <a href="#">
-                            <figure>
-                                <img src="${HopeTag.InstallDir}Skin/images/1086901e3b9f9f324718e5b61d0198a2.png">
-                            </figure>
-                            <div class="sources-decription">密闭式智能微波萃取仪</div>
-                        </a>
-                    </li>
-                    <li class="sources-item">
-                        <a href="#">
-                            <figure>
-                                <img src="${HopeTag.InstallDir}Skin/images/ba4cd308cf924b0ba11d7b326b07c076.png">
-                            </figure>
-                            <div class="sources-decription">气相色谱仪</div>
-                        </a>
-                    </li>
-                </ul>
-
-            </div>
+                <section class="lists news-lists">
+                    <ul>
+                        #foreach($article in ${HopeTag.ArticleListSource(183,true,8)})
+                        <!-- list -->
+                        <li class="lists-item">
+                            <a href="${HopeTag.GetItemLink(${article.GeneralID})}" title="$article.Title" target="_self">
+                                #if ($article.Priority == 0)
+                                <i class="icon"></i>
+                                #else
+                                <i class="icon icon-new"></i>
+                                #end
+                                <span>$article.Title</span>
+                            </a>
+                            <time>${HopeTag.FormatDateTime($article.UpdateTime)}</time>
+                        </li>
+                        #end
+                    </ul>
+                </section>
+                <section class="lists plan-lists">
+                    <ul>
+                        #foreach($article in ${HopeTag.ArticleListSource(161,true,8)})
+                        <!-- list -->
+                        <li class="lists-item">
+                            <a href="${HopeTag.GetItemLink(${article.GeneralID})}" title="$article.Title" target="_self">
+                                #if ($article.Priority == 0)
+                                <i class="icon"></i>
+                                #else
+                                <i class="icon icon-new"></i>
+                                #end
+                                <span>$article.Title</span>
+                            </a>
+                            <time>${HopeTag.FormatDateTime($article.UpdateTime)}</time>
+                        </li>
+                        #end
+                    </ul>
+                </section>
+                <section class="lists expriment-lists">
+                    <ul>
+                        #foreach($article in ${HopeTag.ArticleListSource(162,true,8)})
+                        <!-- list -->
+                        <li class="lists-item">
+                            <a href="${HopeTag.GetItemLink(${article.GeneralID})}" title="$article.Title" target="_self">
+                                #if ($article.Priority == 0)
+                                <i class="icon"></i>
+                                #else
+                                <i class="icon icon-new"></i>
+                                #end
+                                <span>$article.Title</span>
+                            </a>
+                            <time>${HopeTag.FormatDateTime($article.UpdateTime)}</time>
+                        </li>
+                        #end
+                    </ul>
+                </section>
+            </section>
         </div>
+    </section>
 
-        <!--icon list-->
-        <div class="list">
-            <ul>
-                <li class="list-item">
-                    <a href="${HopeTag.GetCategoryLink(158)}">
-                        <i class="icon_1 icon"></i>
 
-                        <div class="ti">师资力量</div>
-                        <div class="intro">一流团队，诲人不倦</div>
+
+    <!--sources-->
+    <div class="sources">
+        <div class="container">
+
+            <div class="ti">
+                <a href="${HopeTag.GetCategoryLink(441)}">
+                    <i class="icon grid"></i>
+                    <span>教学资源</span>
+                </a>
+                <span class="sources-decription">精密仪器，技术领先</span>
+            </div>
+
+            <ul class="sources-items">
+                <li class="sources-item">
+                    <a href="#">
+                        <figure>
+                            <img src="${HopeTag.InstallDir}Skin/images/2bc97717a7aef3dc54b97d1b9b2c3cca.png">
+                        </figure>
+                        <div class="sources-decription">电感耦合等离子体质谱仪</div>
                     </a>
                 </li>
-                <li class="list-item">
-                    <a href="${HopeTag.GetCategoryLink(150)}">
-                        <i class="icon_2 icon"></i>
-
-                        <div class="ti">教学大纲</div>
-                        <div class="intro">一流团队，诲人不倦</div>
+                <li class="sources-item">
+                    <a href="#">
+                        <figure>
+                            <img src="${HopeTag.InstallDir}Skin/images/1086901e3b9f9f324718e5b61d0198a2.png">
+                        </figure>
+                        <div class="sources-decription">密闭式智能微波萃取仪</div>
                     </a>
                 </li>
-                <li class="list-item">
-                    <a href="${HopeTag.GetCategoryLink(180)}">
-                        <i class="icon_3 icon"></i>
-
-                        <div class="ti">教学视频</div>
-                        <div class="intro">一流团队，诲人不倦</div>
-                    </a>
-                </li>
-                <li class="list-item">
-                    <a href="${HopeTag.GetCategoryLink(153)}">
-                        <i class="icon_4 icon"></i>
-
-                        <div class="ti">教学设备</div>
-                        <div class="intro">一流团队，诲人不倦</div>
-                    </a>
-                </li>
-                <li class="list-item">
-                    <a href="${HopeTag.GetCategoryLink(162)}">
-                        <i class="icon_5 icon"></i>
-
-                        <div class="ti">开放实验</div>
-                        <div class="intro">一流团队，诲人不倦</div>
-                    </a>
-                </li>
-                <li class="list-item">
-                    <a href="${HopeTag.GetCategoryLink(166)}">
-                        <i class="icon_6 icon"></i>
-
-                        <div class="ti">教学改革</div>
-                        <div class="intro">一流团队，诲人不倦</div>
+                <li class="sources-item">
+                    <a href="#">
+                        <figure>
+                            <img src="${HopeTag.InstallDir}Skin/images/ba4cd308cf924b0ba11d7b326b07c076.png">
+                        </figure>
+                        <div class="sources-decription">气相色谱仪</div>
                     </a>
                 </li>
             </ul>
+
         </div>
+    </div>
+
+    <!--icon list-->
+    <div class="list">
+        <ul>
+            <li class="list-item">
+                <a href="${HopeTag.GetCategoryLink(158)}">
+                    <i class="icon_1 icon"></i>
+
+                    <div class="ti">师资力量</div>
+                    <div class="intro">一流团队，诲人不倦</div>
+                </a>
+            </li>
+            <li class="list-item">
+                <a href="${HopeTag.GetCategoryLink(150)}">
+                    <i class="icon_2 icon"></i>
+
+                    <div class="ti">教学大纲</div>
+                    <div class="intro">一流团队，诲人不倦</div>
+                </a>
+            </li>
+            <li class="list-item">
+                <a href="${HopeTag.GetCategoryLink(180)}">
+                    <i class="icon_3 icon"></i>
+
+                    <div class="ti">教学视频</div>
+                    <div class="intro">一流团队，诲人不倦</div>
+                </a>
+            </li>
+            <li class="list-item">
+                <a href="${HopeTag.GetCategoryLink(153)}">
+                    <i class="icon_4 icon"></i>
+
+                    <div class="ti">教学设备</div>
+                    <div class="intro">一流团队，诲人不倦</div>
+                </a>
+            </li>
+            <li class="list-item">
+                <a href="${HopeTag.GetCategoryLink(162)}">
+                    <i class="icon_5 icon"></i>
+
+                    <div class="ti">开放实验</div>
+                    <div class="intro">一流团队，诲人不倦</div>
+                </a>
+            </li>
+            <li class="list-item">
+                <a href="${HopeTag.GetCategoryLink(166)}">
+                    <i class="icon_6 icon"></i>
+
+                    <div class="ti">教学改革</div>
+                    <div class="intro">一流团队，诲人不倦</div>
+                </a>
+            </li>
+        </ul>
+    </div>
+</main>
+
+<!-- E index-content -->
+
+<!-- S column3 -->
+<!DOCTYPE html>
+<html>
+##################### head ####################
+${My_modernlab_head}
+
+<body>
+   ########################### header #############################
+   ${My_modernlab_header}
+
+  ############################ navigation ##########################
+  ${My_modernlab_nav}
+
+  ################################ footer ##################################
+  ${My_modernlab_banner}
+
+  ################################ main content ############################
+      <!-- S main -->
+      <main class="content">
+        <div class="achievement container">
+            <div class="achiecontainer">
+                ################################ location ##################################
+                ${My_modernlab_location}
+                <div class="article">
+                    <div class="article_left">
+                        <!-- S content-->
+                        <div class="main_box">
+                            <ul class="list_items">
+                                #set($cat = ${HopeTag.CurrentCategoryID})
+                                #foreach($art in ${HopeTag.ArticlePageSource($cat,false,20)})
+                                <li class="list_item">
+                                    <span class="list_time">${HopeTag.FormatDateTime($art.UpdateTime)}</span>
+                                    <div class="item_contentBox">
+                                        <a class="item_content" href="${HopeTag.GetItemLink($art.GeneralID)}">$art.Title</a>
+                                    </div>
+                                </li>
+                                #end
+                            </ul>
+                        
+                        </div>
+                        ${HopeTag.Pager()}
+                    </div>
+                        ############################ sidebar ##########################
+                        ${My_modernlab_sidebar}
+
+                        <div class="clearfloat"></div>
+                    
+                </div>
+            </div>
     </main>
+    <!-- E mian --> 
+
+    ################################ footer ##################################
+    ${My_modernlab_footer}
+</body>
+
+</html>
+<!-- E column3 -->
