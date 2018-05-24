@@ -75,6 +75,8 @@ $grid {
       width: 100%;
     }
     .description {
+      font-family: KaiTi,"FZSKBXKJW--GB1-0";
+      font-weight: bold;
       display: block;
       text-align: center;
       font-size: 28px;
@@ -85,6 +87,7 @@ $grid {
     }
   }
   .lists {
+    color: #505050;
     display: inline-block;
     width: 63%;
     font-size: 20px;
@@ -173,6 +176,7 @@ $grid {
       width: 100%;
       font-size: 18px;
       color: #000;
+      font-weight: bold;
     }
     img {
       width: 100%;

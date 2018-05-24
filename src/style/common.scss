@@ -2,18 +2,7 @@
 @import 'sprites';
 // declare variable
 //font type
-$font: "Microsoft Yahei",
-"PingFang SC",
-"STHeiti",
-Serif;
-$font-UI: "Microsoft Yahei UI",
-"PingFang SC",
-"STHeiti",
-Serif;
-$font-bold: "Microsoft Yahei-Bold",
-"PingFang SC",
-"STHeiti",
-Serif;
+$font: 	"Microsoft Yahei",STHeiti;
 //font color
 $font-color: #505050;
 $nav-color: #fff;
@@ -27,7 +16,7 @@ $pic1-url: url("../images/pic1.png");
 $footer-bg: url("../images/footer-bg.png");
 // style sheet
 body {
-    font: $font;
+    font-family: $font;
     color: $font-color;
     font-size: 14px;
     background-color: #f8f7fa;
