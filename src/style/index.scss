@@ -103,6 +103,9 @@ $grid {
         line-height: 48px;
         display: inline-block;
         max-width: 70%;
+        @media screen and (max-width: 638px) {
+         max-width: 100%;
+        }
         span {
           display: inline-block;
           width: 100%;
