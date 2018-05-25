@@ -144,6 +144,7 @@ input:-ms-input-placeholder {
     padding: 0 1.12%;
     float: left;
     margin-top: 20px;
+    margin-bottom: 20px;
     border: {
         style: none solid none none;
         color: #e5e5e5;
@@ -258,7 +259,8 @@ $color-theme: #4a78a8;
         vertical-align: middle;
         width: 40px;
         line-height: 28px;
-        background: $color-theme url(../images/icon_search.png) center center no-repeat /80%;
+        background: $color-theme url(../images/icon_search.png) center center no-repeat;
+        background-size: 80%;
         border: {
             color: $color-theme;
             style: solid;

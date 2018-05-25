@@ -270,3 +270,10 @@ $color-theme: #4a78a8;
 	padding: 18px 0px;
 	border-bottom: dashed #505050 1px;
 }
+.no-sidebar.article {
+	.article_left{
+		width:100%;
+		padding:0;
+		border: none;
+	}
+}
