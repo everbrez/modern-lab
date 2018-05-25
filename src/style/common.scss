@@ -286,3 +286,28 @@ footer {
         font-size: 1.2em;
     }
 }
+#map {
+    margin-bottom: 20px;
+    .first-title > a {
+        color: $nav-bg;
+        font-size: 20px;
+    }
+
+    .first-title {
+        line-height: 400%;
+    }
+
+    .second-title {
+        line-height: 1.5;
+        border:{
+            width: 1px;
+            color: $nav-bg;
+            top-style: solid;
+        }
+        li{
+            font-size: 16px;
+            display: inline-block;
+            margin: 1em 2em;
+        }
+    }
+}

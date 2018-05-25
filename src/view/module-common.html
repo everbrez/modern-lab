@@ -723,3 +723,63 @@ ${My_modernlab_head}
 </body>
 
 </html>
+
+<!-- map -->
+<!DOCTYPE html>
+<html>
+##################### head ####################
+${My_modernlab_head}
+
+<body>
+   ########################### header #############################
+   ${My_modernlab_header}
+
+  ############################ navigation ##########################
+  ${My_modernlab_nav}
+
+  ################################ footer ##################################
+  ${My_modernlab_banner}
+
+  ################################ main content ############################
+      <!-- S main -->
+      <main class="content">
+        <div class="achievement container">
+            <div class="achiecontainer">
+                ################################ location ##################################
+                ${My_modernlab_location}
+                <div class="article ">
+                    <div class="article_left">
+                         <!-- S content-->
+                         <ul id="map">
+                            #foreach($id in [149,158,441,442,165,166,443])
+                                #set($cat = ${HopeTag.GetCategory($id)})
+                                <li class="first-title">
+                                       <a href="${HopeTag.GetCategoryLink($cat.NodeID)}">$cat.name</a>    
+                                       #if($id == 441 || $id == 442)     
+                                           <ul class="second-title">
+                                                #foreach($cat1 in ${HopeTag.CategorySource($cat.NodeID)})
+                                                   <li>
+                                                       <a href="${HopeTag.GetCategoryLink($cat1.NodeID)}">$cat1.name</a>
+                                                   </li>
+                                                #end
+                                           </ul>
+                                        #end
+                                   </li>
+                            #end
+                        </ul>
+                    </div>
+                        ############################ sidebar ##########################
+                        ${My_modernlab_sidebar}
+
+                        <div class="clearfloat"></div>
+                    
+                </div>
+            </div>
+    </main>
+    <!-- E mian --> 
+
+    ################################ footer ##################################
+    ${My_modernlab_footer}
+</body>
+
+</html>
