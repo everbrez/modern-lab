@@ -278,3 +278,11 @@ footer {
         }
     }
 }
+.search-title {
+    font-size: 2em;
+    text-align: center;
+    span {
+        color:$nav-bg;
+        font-size: 1.2em;
+    }
+}

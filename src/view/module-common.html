@@ -136,8 +136,9 @@
 <footer>
     <section class="footer-content">
         <!-- footer logo -->
-        <img src="${HopeTag.InstallDir}Skin/images/e4d3c28e4fb819eaf0fada4035274ea8.png">
-        <br>
+        <div class="footer-logo">
+            <img src="${HopeTag.InstallDir}Skin/images/e4d3c28e4fb819eaf0fada4035274ea8.png">
+        </div>
         <!-- footer links -->
         <ul class="footer-links">
             <li>
@@ -554,7 +555,7 @@ ${My_modernlab_head}
             <div class="achiecontainer">
                 ################################ location ##################################
                 ${My_modernlab_location}
-                <div class="article">
+                <div class="article ">
                     <div class="article_left">
                         <!-- S content-->
                         <div class="main_box">
@@ -589,3 +590,136 @@ ${My_modernlab_head}
 
 </html>
 <!-- E column3 -->
+
+#if(${HopeTag.ArticlesNum} == 0)
+<span class="art-nomore">没有更多文章了</span>
+#end
+
+${HopeTag.InputPager()}
+
+<!-- content.html content-->
+<!DOCTYPE html>
+<html>
+##################### head ####################
+${My_modernlab_head}
+
+<body>
+   ########################### header #############################
+   ${My_modernlab_header}
+
+  ############################ navigation ##########################
+  ${My_modernlab_nav}
+
+  ################################ banner ##################################
+  ${My_modernlab_banner}
+
+  ################################ main content ############################
+    <!-- main content -->
+    <main class="content">
+        <div class="achievement container">
+            <div class="achiecontainer">
+                ################################ location ##################################
+                ${My_modernlab_location}
+                <div class="article">
+                    <div class="article_left">
+                        <div class="article_left_contain">
+                            <div class="article_title">
+                                ${HopeTag.Article.Title}
+                            </div>
+
+                            <div class="article_otherInfo">作者：${HopeTag.GetValue("Author")} 来源：${HopeTag.GetValue("CopyFrom")} 发布时间：${HopeTag.FormatDateTime(${HopeTag.Article.UpdateTime})} 点击数：${HopeTag.Article.Hits}</div>
+                            ${HopeTag.GetValue("Content")}
+                           
+                            <div class="article_copyright">文章录入：${HopeTag.GetValue("Author")}</div>
+                            <div class="article_preNext">
+                                <ul class="hope_article_preNext">
+                                    <li>上一篇文章：
+                                            #if(${HopeTag.PreviousArticle.Title} == "")
+                                        <a href="${HopeTag.PreviousArticleLink}">没有了</a>
+                                        #else
+                                        <a href="${HopeTag.PreviousArticleLink}">${HopeTag.PreviousArticle.Title}</a>
+                                        #end
+                                    </li>
+                                    <li>下一篇文章：
+                                            #if(${HopeTag.NextArticle.Title} == "")
+                                            <a href="${HopeTag.PreviousArticleLink}">没有了</a>
+                                        #else
+                                        <a href="${HopeTag.NextArticleLink}">${HopeTag.NextArticle.Title}</a>
+                                        #end
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    ############################ sidebar ##########################
+                    ${My_modernlab_sidebar}
+
+                    <div class="clearfloat"></div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    ################################ footer ##################################
+    ${My_modernlab_footer}
+</body>
+
+</html>
+<!-- search -->
+<!DOCTYPE html>
+<html>
+##################### head ####################
+${My_modernlab_head}
+
+<body>
+   ########################### header #############################
+   ${My_modernlab_header}
+
+  ############################ navigation ##########################
+  ${My_modernlab_nav}
+
+
+  ################################ main content ############################
+      <!-- S main -->
+      <main class="content">
+        <div class="achievement container">
+            <div class="achiecontainer">
+                ################################ location ##################################
+                ${My_modernlab_location}
+                <div class="article no-sidebar">
+                    <div class="article_left">
+                        <!-- S content-->
+                        <div class="main_box">
+                            <h2 class="search-title">搜索<span>${HopeTag.Keyword}</span>的结果</h2>
+                            <ul class="list_items">
+                                #set($index = 0)
+                                #foreach($art in ${HopeTag.ArticleSearchSource(20)})
+                                $index = $index + 1
+                                <li class="list_item">
+                                    <span class="list_time">${HopeTag.FormatDateTime($art.UpdateTime)}</span>
+                                    <div class="item_contentBox">
+                                        <a class="item_content" href="${HopeTag.GetItemLink($art.GeneralID)}">$art.Title</a>
+                                    </div>
+                                </li>
+                                #end
+#if($index == 0)
+<span class="art-nomore">找不到<span>${HopeTag.Keyword}</span>的结果</span>
+#end
+                            </ul>
+                        
+                        </div>
+                        ${HopeTag.SearchPager()}
+                    </div>
+
+                        <div class="clearfloat"></div>
+                    
+                </div>
+            </div>
+    </main>
+    <!-- E mian --> 
+
+    ################################ footer ##################################
+    ${My_modernlab_footer}
+</body>
+
+</html>
