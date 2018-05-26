@@ -287,27 +287,36 @@ footer {
     }
 }
 #map {
-    margin-bottom: 20px;
+    text-align: center;
+    margin: 20px 0;
+    position: relative;
+    section {
+        display: inline-block;
+        width: 32.33%;
+        vertical-align: top;
+    }
     .first-title > a {
         color: $nav-bg;
         font-size: 20px;
     }
 
     .first-title {
-        line-height: 400%;
+        line-height: 200%;
+        margin: 0 0 20px 0;
     }
 
     .second-title {
         line-height: 1.5;
-        border:{
-            width: 1px;
-            color: $nav-bg;
-            top-style: solid;
-        }
         li{
             font-size: 16px;
-            display: inline-block;
-            margin: 1em 2em;
+            margin: 1em 0;
         }
+    }
+    .split-line {
+        position: absolute;
+        display: inline-block;
+        background: #e5e5e5;
+        width: 1px;
+        height: 100%;
     }
 }

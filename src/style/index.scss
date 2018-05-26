@@ -1,5 +1,6 @@
 @import 'reset';
 @import 'sprites.scss';
+$font-1: "font1";
 //icons
 .icon-new {
   @include sprite($new);
@@ -67,7 +68,7 @@ $grid {
         justify-content: space-between;
         align-items: center;
         .icon {
-          margin-right: 5px;
+          margin-right: .5em;
         }
       }
     }
@@ -82,7 +83,7 @@ $grid {
       width: 100%;
     }
     .description {
-      font-family: KaiTi,"FZSKBXKJW--GB1-0";
+      font-family: $font-1,KaiTi,"FZSKBXKJW--GB1-0";
       font-weight: bold;
       display: block;
       text-align: center;
